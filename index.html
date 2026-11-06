@@ -92,6 +92,8 @@
   }
   .card:nth-child(1){animation-delay:.55s}
   .card:nth-child(2){animation-delay:.7s}
+  .card:nth-child(3){animation-delay:.85s}
+  .card:nth-child(4){animation-delay:1s}
 
   .card .top{
     display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px;
@@ -112,6 +114,14 @@
     opacity:0;transition:opacity .9s ease;
   }
   .gallery img.on{opacity:1}
+  .gallery img.tall{object-fit:contain;z-index:1}
+  .gallery .fill{
+    position:absolute;inset:-24px;
+    background-size:cover;background-position:center;
+    filter:blur(22px) brightness(.55);
+    opacity:0;transition:opacity .9s ease;
+  }
+  .gallery .fill.on{opacity:1}
   .gallery .arrow{
     position:absolute;top:50%;z-index:2;transform:translateY(-50%);
     width:40px;height:40px;border-radius:50%;border:0;cursor:pointer;
@@ -128,6 +138,13 @@
 
   .card .label{
     font-size:11px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);
+  }
+  .card .label{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
+  .card .status{
+    display:inline-block;white-space:nowrap;
+    padding:5px 11px;border-radius:999px;
+    border:1px solid rgba(255,255,255,.55);color:#fff;
+    font-size:10px;letter-spacing:.2em;
   }
   .card h2{
     font-family:var(--serif);font-weight:400;
@@ -161,6 +178,7 @@
     *{animation:none!important;opacity:1!important;transition:none!important}
     .gallery img{opacity:0!important}
     .gallery img.on{opacity:1!important}
+    .gallery .fill:not(.on){opacity:0!important}
   }
 
   @media (max-width:760px){
@@ -193,7 +211,7 @@ src="https://www.facebook.com/tr?id=1496508605836567&ev=PageView&noscript=1"
 <main>
   <span class="eyebrow">Atendimento com corretora</span>
 
-  <h1>The Collection.<br><em>Escolha o seu endereço.</em></h1>
+  <h1>Imóveis à venda<br><em>Escolha o seu endereço.</em></h1>
 
   <p class="sub">Dois bairros, um mesmo padrão. Fale direto comigo pelo WhatsApp e receba plantas, valores e condições do empreendimento que combina com você.</p>
 
@@ -205,7 +223,7 @@ src="https://www.facebook.com/tr?id=1496508605836567&ev=PageView&noscript=1"
         <button class="arrow prev" type="button" aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
         <button class="arrow next" type="button" aria-label="Próxima foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
       </div>
-      <span class="label">São Paulo · Zona Sul</span>
+      <span class="label">São Paulo · Zona Sul<span class="status">Pronto para morar</span></span>
       <h2>The Collection<br>Moema</h2>
       <a class="btn" href="https://wa.me/5511983495742" target="_blank" rel="noopener">
         Quero saber sobre Moema
@@ -220,10 +238,40 @@ src="https://www.facebook.com/tr?id=1496508605836567&ev=PageView&noscript=1"
         <button class="arrow prev" type="button" aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
         <button class="arrow next" type="button" aria-label="Próxima foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
       </div>
-      <span class="label">São Paulo · Zona Sul</span>
+      <span class="label">São Paulo · Zona Sul<span class="status">Em obras</span></span>
       <h2>The Collection<br>Vila Mariana</h2>
       <a class="btn" href="https://wa.me/5511983495742" target="_blank" rel="noopener">
         Quero saber sobre Vila Mariana
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+      </a>
+    </article>
+
+    <article class="card">
+      <div class="top"><span class="num">03</span><span class="count" aria-hidden="true"></span></div>
+      <div class="gallery" data-dir="img/auren" data-total="12" aria-roledescription="carrossel" aria-label="Fotos do Auren Studios">
+        <img class="on" src="img/auren/01.jpg" alt="Auren Studios">
+        <button class="arrow prev" type="button" aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+        <button class="arrow next" type="button" aria-label="Próxima foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+      </div>
+      <span class="label">São Paulo · Vila Clementino<span class="status">Na planta</span></span>
+      <h2>Auren Studios</h2>
+      <a class="btn" href="https://wa.me/5511983495742" target="_blank" rel="noopener">
+        Quero saber sobre o Auren
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+      </a>
+    </article>
+
+    <article class="card">
+      <div class="top"><span class="num">04</span><span class="count" aria-hidden="true"></span></div>
+      <div class="gallery" data-dir="img/spot-paraiso" data-total="6" data-inteiras="2" aria-roledescription="carrossel" aria-label="Fotos do Spot Paraíso">
+        <img class="on" src="img/spot-paraiso/01.jpg" alt="Spot Paraíso">
+        <button class="arrow prev" type="button" aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+        <button class="arrow next" type="button" aria-label="Próxima foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+      </div>
+      <span class="label">São Paulo · Paraíso<span class="status">Breve lançamento</span></span>
+      <h2>Spot Paraíso</h2>
+      <a class="btn" href="https://wa.me/5511983495742" target="_blank" rel="noopener">
+        Quero saber sobre o Spot Paraíso
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
       </a>
     </article>
@@ -256,6 +304,25 @@ src="https://www.facebook.com/tr?id=1496508605836567&ev=PageView&noscript=1"
       }
       var load = function(im){ if (im.dataset.src){ im.src = im.dataset.src; delete im.dataset.src; } };
 
+      // fotos em pé (fachadas) aparecem inteiras, com a própria foto desfocada preenchendo as laterais
+      var inteiras = (box.dataset.inteiras || '').split(',').map(Number);
+      var fill = document.createElement('div');
+      fill.className = 'fill';
+      box.insertBefore(fill, first);
+      var syncFill = function(){
+        var im = imgs[cur];
+        var tall = im.classList.contains('tall');
+        if (tall) fill.style.backgroundImage = 'url("' + im.currentSrc + '")';
+        fill.classList.toggle('on', tall);
+      };
+      imgs.forEach(function(im){
+        var mark = function(){
+          if (im.naturalHeight > im.naturalWidth || inteiras.indexOf(imgs.indexOf(im) + 1) > -1) im.classList.add('tall');
+          if (im === imgs[cur]) syncFill();
+        };
+        if (im.complete && im.naturalWidth) mark(); else im.addEventListener('load', mark);
+      });
+
       var cur = 0, timer = null;
       var show = function(n){
         n = (n + total) % total;
@@ -263,6 +330,7 @@ src="https://www.facebook.com/tr?id=1496508605836567&ev=PageView&noscript=1"
         imgs[cur].classList.remove('on');
         imgs[n].classList.add('on');
         cur = n;
+        syncFill();
         load(imgs[(cur + 1) % total]);
         load(imgs[(cur - 1 + total) % total]);
         count.textContent = pad(cur + 1) + ' / ' + pad(total);
